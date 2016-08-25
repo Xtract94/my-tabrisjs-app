@@ -36,12 +36,7 @@ var input1 = new tabris.TextInput({
             if (xhr.readyState === xhr.DONE) {
                 returnObject = JSON.parse(xhr.responseText);
                 textView3.set("text", returnObject[9].length);
-                /*
-                new tabris.TextView({
-                  layoutData: {left: 10, right: 10, top: "prev() 10"},
-                  text: JSON.parse(xhr.responseText)[1].join(", ")
-                }).appendTo(page2);
-                */
+                
             }
         };
         xhr.open("GET", "http://de.wiktionary.org/w/api.php?action=opensearch&search=" + input1.get("text") + "&limit=100");
